@@ -33,48 +33,53 @@ Features
 
 
 Tech Stack
-The app leverages a carefully curated set of R packages, each contributing to its functionality, interactivity, and polish. Below are the core packages, styled in colorful panels for clarity.
+The app leverages a carefully curated set of R packages, each contributing to its functionality, interactivity, and polish. Below are the core packages, showcased in vibrant banners.
 
-  
-    shiny
-    Version: >= 1.7.4
-    Powers the web app framework, enabling reactive UI and server-side logic for real-time interactivity.
-  
-  
-    ggplot2
-    Version: >= 3.4.2
-    Creates elegant, customizable plots for debt trends, converted to interactive Plotly visuals.
-  
-  
-    plotly
-    Version: >= 4.10.0
-    Renders interactive charts (pie, line, bar, histogram) with hover, zoom, and animation features.
-  
-  
-    shinyWidgets
-    Version: >= 0.7.2
-    Enhances UI with picker inputs, sliders, and buttons for intuitive controls.
-  
-  
-    shinycssloaders
-    Version: >= 0.5.2
-    Adds loading spinners to visualizations, improving user experience during data processing.
-  
-  
-    DT
-    Version: >= 0.9.6
-    Generates interactive data tables for Monte Carlo simulation results.
-  
-  
-    htmltools
-    Version: >= 0.5.0
-    Facilitates dynamic HTML generation for custom UI components like KPI cards.
-  
-  
-    shinyjs
-    Version: >= 1.7.0
-    Enables JavaScript-based UI interactions, such as toggling sidebar panels.
-  
+  shiny
+  Version: >= 1.7.4
+  Powers the web app framework, enabling reactive UI and server-side logic for real-time interactivity.
+
+
+
+  ggplot2
+  Version: >= 3.4.2
+  Creates elegant, customizable plots for debt trends, converted to interactive Plotly visuals.
+
+
+
+  plotly
+  Version: >= 4.10.0
+  Renders interactive charts (pie, line, bar, histogram) with hover, zoom, and animation features.
+
+
+
+  shinyWidgets
+  Version: >= 0.7.2
+  Enhances UI with picker inputs, sliders, and buttons for intuitive controls.
+
+
+
+  shinycssloaders
+  Version: >= 0.5.2
+  Adds loading spinners to visualizations, improving user experience during data processing.
+
+
+
+  DT
+  Version: >= 0.9.6
+  Generates interactive data tables for Monte Carlo simulation results.
+
+
+
+  htmltools
+  Version: >= 0.5.0
+  Facilitates dynamic HTML generation for custom UI components like KPI cards.
+
+
+
+  shinyjs
+  Version: >= 1.7.0
+  Enables JavaScript-based UI interactions, such as toggling sidebar panels.
 
 
 External Resources:
@@ -378,7 +383,7 @@ flatly_css <- "
   .kpi-card p { 
     font-size: 2em; 
     font-weight: bold; 
-    color: #34495e; 
+    color: #344 regener95e; 
     margin: 10px 0 0; 
   }
   .tooltip { 
@@ -882,7 +887,7 @@ server <- function(input, output, session) {
       plot_ly(filtered_data, x = ~Year, y = ~Amount, color = ~Holder, type = "scatter", mode = "lines+markers",
               stackgroup = "one", hoverinfo = "text", text = ~paste(Holder, ": $", Amount, "B"),
               marker = list(size = 8), line = list(width = 2)) %>%
-        layout(title = list(text = "Debt Composition Over Time", x = 0.5, font = trust(list(size = 20)),
+        layout(title = list(text = "Debt Composition Over Time", x = 0.5, font = list(size = 20)),
                xaxis = list(title = "Year"), yaxis = list(title = "Amount (Billions USD)"),
                legend = list(orientation = "h", x = 0.5, xanchor = "center", y = -0.2),
                margin = list(t = 100))
@@ -1070,4 +1075,6 @@ By making debt data interactive, customizable, and visually engaging, USDebtInsi
 Conclusion
 USDebtInsights is a powerful tool for dissecting the U.S. national debt, blending cutting-edge R technology with a user-friendly, PowerBI-inspired interface. Whether you’re analyzing debt composition, forecasting fiscal scenarios, or preparing for a lecture or campaign, this app delivers the data and visuals you need. Explore it live at https://mmcdonald411.shinyapps.io/USDebtApp/, clone the repository to customize it, or contribute to its development on GitHub. Join us in illuminating one of the most pressing economic challenges of our time.
 License: MIT
-Contributing: Pull requests and issues are welcome! Please
+Contributing: Pull requests and issues are welcome! Please follow the contributing guidelines.
+Contact: [Your Name] (your.email@example.com) or open an issue on GitHub.
+
