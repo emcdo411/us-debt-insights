@@ -1,10 +1,9 @@
-USDebtInsights
+USDebtInsights 💰
 
 
 Table of Contents
 
 Summary
-Introduction
 Features
 Tech Stack
 Installation
@@ -14,100 +13,87 @@ Why This Matters
 Conclusion
 
 
-Summary
-USDebtInsights is an interactive Shiny web application that delivers real-time, data-driven insights into the U.S. national debt, designed for economists, political strategists, and academic researchers. Hosted at https://mmcdonald411.shinyapps.io/USDebtApp/, this app visualizes critical metrics—total debt, debt-to-GDP ratio, foreign debt share, and more—through intuitive Plotly charts and KPI cards inspired by PowerBI aesthetics. With features like Monte Carlo scenario analysis, customizable data uploads, and dynamic theme switching, it empowers users to explore fiscal trends, forecast debt trajectories, and inform policy debates. Built with a robust R ecosystem, this app bridges academic rigor with practical decision-making, making complex economic data accessible and actionable.
+Summary 📊
+USDebtInsights is a Shiny app for real-time U.S. national debt analysis, hosted at https://mmcdonald411.shinyapps.io/USDebtApp/. Built with R, it offers interactive Plotly visualizations, Monte Carlo simulations, and data uploads for economists, strategists, and professors. Its PowerBI-inspired UI delivers actionable fiscal insights.
 
-Introduction
-The U.S. national debt, exceeding $35 trillion by 2025, is a cornerstone of economic policy and public discourse. USDebtInsights transforms raw data into a sleek, interactive dashboard that illuminates debt composition, historical trends, and future projections. Whether you’re an Ivy League professor analyzing debt-to-GDP ratios, a political strategist crafting campaign narratives, or an economist forecasting fiscal sustainability, this app provides the tools to explore, visualize, and download debt-related data with ease. Its PowerBI-like design—featuring gradient backgrounds, Segoe UI typography, and GSAP animations—ensures an engaging experience for all users.
+Features 🚀
 
-Features
-
-📊 KPI Cards: Real-time metrics for total debt, debt-to-GDP ratio, and foreign debt share, animated with GSAP for visual impact.
-📈 Interactive Visualizations: Plotly charts for debt holders, debt over time, debt-to-GDP, foreign holders, Fed remittances, and debt composition, with hover, zoom, and animation capabilities.
-🔍 Monte Carlo Scenario Analysis: Simulate debt projections based on user-defined interest rates, GDP growth, and inflation, visualized as histograms and data tables.
-📥 Data Uploads: Import custom CSV datasets for debt holders, debt over time, foreign holders, and Fed remittances, with robust validation.
-💾 Downloads: Export datasets (CSV) and plots (PNG) for reports and presentations.
-🎨 Theme Switching: Choose between Darkly, Flatly, and Minty themes for personalized aesthetics.
-⚙️ Responsive Design: Optimized for desktop and mobile, with collapsible sidebar panels for navigation, uploads, controls, and downloads.
-🛠️ Accessibility: ARIA-compliant inputs and keyboard navigation for inclusive use.
+KPI Cards: Total debt, debt-to-GDP, foreign debt share with GSAP animations.
+Visualizations: Plotly charts for debt holders, trends, debt-to-GDP, foreign holders, Fed remittances, and composition.
+Scenario Analysis: Monte Carlo simulations for debt projections.
+Data Uploads: CSV imports for custom datasets with validation.
+Downloads: Export CSV datasets and PNG plots.
+Themes: Darkly, Flatly, Minty with dynamic CSS.
+Responsive: Mobile-friendly, ARIA-compliant UI.
 
 
-Tech Stack
-The app leverages a carefully curated set of R packages, each contributing to its functionality, interactivity, and polish. Below are the core packages, showcased in vibrant banners.
+Tech Stack 💻
+Core R packages power USDebtInsights, each with a specific role:
 
   shiny
-  Version: >= 1.7.4
-  Powers the web app framework, enabling reactive UI and server-side logic for real-time interactivity.
+  >= 1.7.4
+  Reactive web framework for dynamic UI and server logic.
 
 
 
   ggplot2
-  Version: >= 3.4.2
-  Creates elegant, customizable plots for debt trends, converted to interactive Plotly visuals.
+  >= 3.4.2
+  Static plotting library for data visualizations, converted to Plotly.
 
 
 
   plotly
-  Version: >= 4.10.0
-  Renders interactive charts (pie, line, bar, histogram) with hover, zoom, and animation features.
+  >= 4.10.0
+  Interactive charting library for pie, line, bar, and histogram plots.
 
 
 
   shinyWidgets
-  Version: >= 0.7.2
-  Enhances UI with picker inputs, sliders, and buttons for intuitive controls.
+  >= 0.7.2
+  Custom UI widgets for sliders, pickers, and buttons.
 
 
 
   shinycssloaders
-  Version: >= 0.5.2
-  Adds loading spinners to visualizations, improving user experience during data processing.
+  >= 0.5.2
+  Loading spinners for async plot rendering.
 
 
 
   DT
-  Version: >= 0.9.6
-  Generates interactive data tables for Monte Carlo simulation results.
+  >= 0.9.6
+  Interactive data tables for simulation results.
 
 
 
   htmltools
-  Version: >= 0.5.0
-  Facilitates dynamic HTML generation for custom UI components like KPI cards.
+  >= 0.5.0
+  Dynamic HTML generation for custom UI components.
 
 
 
   shinyjs
-  Version: >= 1.7.0
-  Enables JavaScript-based UI interactions, such as toggling sidebar panels.
+  >= 1.7.0
+  JavaScript integration for UI interactions.
 
 
-External Resources:
+External:
 
-GSAP: Animates KPI cards with smooth transitions (CDN-hosted).
-Font Awesome: Provides icons for intuitive navigation (CDN-hosted).
-Google Fonts: Delivers Segoe UI and Roboto for a modern, professional look (CDN-hosted).
-
-
-Installation
-To run USDebtInsights locally or deploy it, follow these steps:
-
-Install R and RStudio:
-
-Download R (version >= 4.2.0) and RStudio.
+GSAP: Animates KPI cards (CDN).
+Font Awesome: Icons (CDN).
+Google Fonts: Segoe UI, Roboto (CDN).
 
 
-Install Required Packages:
-install.packages(c("shiny", "ggplot2", "plotly", "shinyWidgets", "shinycssloaders", "DT", "htmltools", "shinyjs"))
+Installation 🛠️
+
+Requirements: R (>= 4.2.0), RStudio.
+Install Packages:install.packages(c("shiny", "ggplot2", "plotly", "shinyWidgets", "shinycssloaders", "DT", "htmltools", "shinyjs"))
 
 
-Clone the Repository:
-git clone https://github.com/your-username/USDebtInsights.git
-cd USDebtInsights
+Clone Repo:git clone https://github.com/your-username/USDebtInsights.git
 
 
-Verify Package Versions:
-packageVersion("shiny")       # >= 1.7.4
+Verify Versions:packageVersion("shiny")       # >= 1.7.4
 packageVersion("ggplot2")     # >= 3.4.2
 packageVersion("plotly")      # >= 4.10.0
 packageVersion("shinyWidgets") # >= 0.7.2
@@ -117,76 +103,33 @@ packageVersion("htmltools")   # >= 0.5.0
 packageVersion("shinyjs")     # >= 1.7.0
 
 
-Run the App Locally:
-setwd("path/to/USDebtInsights")
-shiny::runApp("app.R")
+Run Locally:shiny::runApp("app.R")
 
 
-Deploy to ShinyApps.io (Optional):
-
-Install rsconnect:install.packages("rsconnect")
-
-
-Configure your ShinyApps.io account:rsconnect::setAccountInfo(name = "your-username", token = "your-token", secret = "your-secret")
-
-
-Deploy:rsconnect::deployApp(appDir = ".", appName = "USDebtApp", runtime = "shiny")
+Deploy (Optional):install.packages("rsconnect")
+rsconnect::deployApp(appDir = ".", appName = "USDebtApp", runtime = "shiny")
 
 
 
+Note: Remove Quarto files (e.g., _quarto.yml) before deployment.
 
+Usage ▶️
+Access at https://mmcdonald411.shinyapps.io/USDebtApp/ or run locally:
 
-Note: Ensure no Quarto-related files (e.g., _quarto.yml, .qmd, .Rmd) are in the app directory to avoid deployment errors.
+View KPIs: Total debt, debt-to-GDP, foreign share.
+Interact: Hover/zoom Plotly charts, adjust year sliders.
+Upload: CSVs for debt holders, trends, foreign holders, remittances.
+Analyze: Run Monte Carlo simulations in Scenario Analysis tab.
+Download: Export CSVs or PNGs.
+Customize: Switch themes (Darkly, Flatly, Minty).
 
-Usage
-Visit the live app at https://mmcdonald411.shinyapps.io/USDebtApp/ or run it locally. Here’s how to get started:
+Screenshot: [Add app screenshot/GIF here, e.g., via ScreenToGif.]
 
-Explore the Dashboard:
+Code 📝
 
-View KPI cards for total debt, debt-to-GDP ratio, and foreign debt share.
-Navigate tabs (Overview, Debt Holders, Debt Over Time, etc.) using the sidebar or top navigation.
+app.R (Expand)
 
-
-Interact with Visualizations:
-
-Hover over Plotly charts for detailed tooltips (e.g., debt amounts, years).
-Zoom or pan to focus on specific data ranges.
-Adjust the year range slider for time-series plots (Debt Over Time, Debt-to-GDP, Debt Composition).
-
-
-Upload Custom Data:
-
-Upload CSV files for debt holders (Holder, Amount), debt over time (Year, Debt, GDP), foreign holders (Country, Amount), or Fed remittances (Year, Remittance).
-The app validates uploads and displays notifications for success or errors.
-
-
-Run Scenario Analysis:
-
-Input parameters (interest rate, GDP growth, inflation, number of simulations) in the Scenario Analysis tab.
-Click "Run Scenario" to generate a Monte Carlo simulation, displayed as a histogram and interactive table.
-Reset inputs with the "Reset" button.
-
-
-Download Data and Plots:
-
-Export datasets as CSVs or plots as PNGs using the Downloads panel.
-Use exported files for reports, presentations, or further analysis.
-
-
-Switch Themes:
-
-Select Darkly, Flatly, or Minty from the sidebar to customize the app’s appearance.
-
-
-
-Screenshot: [Add a screenshot or GIF of the app here to showcase its interface. Use a tool like ScreenToGif or ShareX.]
-
-Code
-
-Full app.R Code (Click to Expand)
-
-# Clear global environment to avoid interference
-# Note: For ShinyApps.io deployment, ensure runtime is set to 'shiny' and no Quarto-related files (e.g., _quarto.yml, .qmd, .Rmd) are in the app directory
+# Clear global environment
 rm(list = ls())
 
 library(shiny)
@@ -198,298 +141,79 @@ library(DT)
 library(htmltools)
 library(shinyjs)
 
-# Check for required packages and versions
+# Package checks
 required_packages <- c("shiny", "ggplot2", "plotly", "shinyWidgets", "shinycssloaders", "DT", "htmltools", "shinyjs")
 min_versions <- c("1.7.4", "3.4.2", "4.10.0", "0.7.2", "0.5.2", "0.9.6", "0.5.0", "1.7.0")
 missing_packages <- required_packages[!sapply(required_packages, requireNamespace, quietly = TRUE)]
 if (length(missing_packages) > 0) {
-  stop(paste("Missing packages:", paste(missing_packages, collapse = ", "), ". Please install them using install.packages()."))
+  stop(paste("Missing packages:", paste(missing_packages, collapse = ", ")))
 }
 for (i in seq_along(required_packages)) {
   if (packageVersion(required_packages[i]) < min_versions[i]) {
     stop(paste("Package", required_packages[i], "version", packageVersion(required_packages[i]), 
-               "is too old. Please update to at least version", min_versions[i], "using install.packages()."))
+               "too old. Update to >= ", min_versions[i]))
   }
 }
 
-# Check for www/ folder and create theme CSS files
+# Create www/ folder and theme CSS
 www_files <- c("darkly.css", "flatly.css", "minty.css")
-if (!dir.exists("www")) dir.create("www", showWarnings = FALSE)
+if (!dir.exists("www")) dir.create("www")
 darkly_css <- "
-  body { 
-    font-family: 'Segoe UI', 'Roboto', sans-serif; 
-    background: linear-gradient(135deg, #1e1e1e, #2d2d30); 
-    color: #ffffff; 
-  }
-  .sidebar { 
-    background: #252526; 
-    padding: 20px; 
-    border-right: 2px solid #0078d4; 
-    border-radius: 0 12px 12px 0; 
-  }
-  .main-panel { 
-    padding: 30px; 
-  }
-  .well { 
-    background: #2d2d30; 
-    border: none; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3); 
-    border-radius: 12px; 
-    color: #d4d4d4; 
-    transition: transform 0.3s ease; 
-    margin-bottom: 10px;
-  }
-  .well:hover { 
-    transform: scale(1.02); 
-  }
-  .toggle-btn { 
-    background: #0078d4; 
-    border: none; 
-    border-radius: 8px; 
-    color: #ffffff; 
-    width: 100%; 
-    text-align: left; 
-    padding: 10px; 
-    margin-bottom: 5px; 
-    transition: background 0.3s ease; 
-  }
-  .toggle-btn:hover { 
-    background: #005ba1; 
-  }
-  .btn-primary { 
-    background: #0078d4; 
-    border: none; 
-    border-radius: 8px; 
-    transition: background 0.3s ease; 
-  }
-  .btn-primary:hover { 
-    background: #005ba1; 
-  }
-  .nav-tabs > li > a { 
-    color: #d4d4d4; 
-    background: #2d2d30; 
-    border-radius: 8px 8px 0 0; 
-    margin-right: 4px; 
-  }
-  .nav-tabs > li.active > a { 
-    color: #ffffff; 
-    background: #0078d4; 
-  }
-  .kpi-card { 
-    background: #2d2d30; 
-    border-radius: 12px; 
-    padding: 20px; 
-    text-align: center; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3); 
-    margin-bottom: 20px; 
-  }
-  .kpi-card h3 { 
-    margin: 0; 
-    font-size: 1.5em; 
-    color: #64b5f6; 
-  }
-  .kpi-card p { 
-    font-size: 2em; 
-    font-weight: bold; 
-    color: #ffffff; 
-    margin: 10px 0 0; 
-  }
-  .tooltip { 
-    background: #252526; 
-    color: #ffffff; 
-    border: 1px solid #0078d4; 
-  }
-  .plotly .modebar { 
-    background: #2d2d30; 
-  }
-  @media (max-width: 768px) { 
-    .well, .kpi-card { width: 100%; } 
-    .sidebar { width: 100%; border-radius: 12px; } 
-  }
+  body { font-family: 'Segoe UI', 'Roboto', sans-serif; background: linear-gradient(135deg, #1e1e1e, #2d2d30); color: #ffffff; }
+  .sidebar { background: #252526; padding: 20px; border-right: 2px solid #0078d4; border-radius: 0 12px 12px 0; }
+  .main-panel { padding: 30px; }
+  .well { background: #2d2d30; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border-radius: 12px; color: #d4d4d4; transition: transform 0.3s ease; margin-bottom: 10px; }
+  .well:hover { transform: scale(1.02); }
+  .toggle-btn { background: #0078d4; border: none; border-radius: 8px; color: #ffffff; width: 100%; text-align: left; padding: 10px; margin-bottom: 5px; transition: background 0.3s ease; }
+  .toggle-btn:hover { background: #005ba1; }
+  .btn-primary { background: #0078d4; border: none; border-radius: 8px; transition: background 0.3s ease; }
+  .btn-primary:hover { background: #005ba1; }
+  .nav-tabs > li > a { color: #d4d4d4; background: #2d2d30; border-radius: 8px 8px 0 0; margin-right: 4px; }
+  .nav-tabs > li.active > a { color: #ffffff; background: #0078d4; }
+  .kpi-card { background: #2d2d30; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-bottom: 20px; }
+  .kpi-card h3 { margin: 0; font-size: 1.5em; color: #64b5f6; }
+  .kpi-card p { font-size: 2em; font-weight: bold; color: #ffffff; margin: 10px 0 0; }
+  .tooltip { background: #252526; color: #ffffff; border: 1px solid #0078d4; }
+  .plotly .modebar { background: #2d2d30; }
+  @media (max-width: 768px) { .well, .kpi-card { width: 100%; } .sidebar { width: 100%; border-radius: 12px; } }
 "
 flatly_css <- "
-  body { 
-    font-family: 'Segoe UI', 'Roboto', sans-serif; 
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef); 
-    color: #333333; 
-  }
-  .sidebar { 
-    background: #34495e; 
-    padding: 20px; 
-    border-right: 2px solid #2c3e50; 
-    border-radius: 0 12px 12px 0; 
-  }
-  .main-panel { 
-    padding: 30px; 
-  }
-  .well { 
-    background: #ffffff; 
-    border: none; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-    border-radius: 12px; 
-    color: #333333; 
-    transition: transform 0.3s ease; 
-    margin-bottom: 10px;
-  }
-  .well:hover { 
-    transform: scale(1.02); 
-  }
-  .toggle-btn { 
-    background: #2c3e50; 
-    border: none; 
-    border-radius: 8px; 
-    color: #ffffff; 
-    width: 100%; 
-    text-align: left; 
-    padding: 10px; 
-    margin-bottom: 5px; 
-    transition: background 0.3s ease; 
-  }
-  .toggle-btn:hover { 
-    background: #1a252f; 
-  }
-  .btn-primary { 
-    background: #2c3e50; 
-    border: none; 
-    border-radius: 8px; 
-    transition: background 0.3s ease; 
-  }
-  .btn-primary:hover { 
-    background: #1a252f; 
-  }
-  .nav-tabs > li > a { 
-    color: #ecf0f1; 
-    background: #34495e; 
-    border-radius: 8px 8px 0 0; 
-    margin-right: 4px; 
-  }
-  .nav-tabs > li.active > a { 
-    color: #ffffff; 
-    background: #2c3e50; 
-  }
-  .kpi-card { 
-    background: #ffffff; 
-    border-radius: 12px; 
-    padding: 20px; 
-    text-align: center; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-    margin-bottom: 20px; 
-  }
-  .kpi-card h3 { 
-    margin: 0; 
-    font-size: 1.5em; 
-    color: #2c3e50; 
-  }
-  .kpi-card p { 
-    font-size: 2em; 
-    font-weight: bold; 
-    color: #344 regener95e; 
-    margin: 10px 0 0; 
-  }
-  .tooltip { 
-    background: #34495e; 
-    color: #ffffff; 
-    border: 1px solid #2c3e50; 
-  }
-  .plotly .modebar { 
-    background: #ffffff; 
-  }
-  @media (max-width: 768px) { 
-    .well, .kpi-card { width: 100%; } 
-    .sidebar { width: 100%; border-radius: 12px; } 
-  }
+  body { font-family: 'Segoe UI', 'Roboto', sans-serif; background: linear-gradient(135deg, #f8f9fa, #e9ecef); color: #333333; }
+  .sidebar { background: #34495e; padding: 20px; border-right: 2px solid #2c3e50; border-radius: 0 12px 12px 0; }
+  .main-panel { padding: 30px; }
+  .well { background: #ffffff; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 12px; color: #333333; transition: transform 0.3s ease; margin-bottom: 10px; }
+  .well:hover { transform: scale(1.02); }
+  .toggle-btn { background: #2c3e50; border: none; border-radius: 8px; color: #ffffff; width: 100%; text-align: left; padding: 10px; margin-bottom: 5px; transition: background 0.3s ease; }
+  .toggle-btn:hover { background: #1a252f; }
+  .btn-primary { background: #2c3e50; border: none; border-radius: 8px; transition: background 0.3s ease; }
+  .btn-primary:hover { background: #1a252f; }
+  .nav-tabs > li > a { color: #ecf0f1; background: #34495e; border-radius: 8px 8px 0 0; margin-right: 4px; }
+  .nav-tabs > li.active > a { color: #ffffff; background: #2c3e50; }
+  .kpi-card { background: #ffffff; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 20px; }
+  .kpi-card h3 { margin: 0; font-size: 1.5em; color: #2c3e50; }
+  .kpi-card p { font-size: 2em; font-weight: bold; color: #34495e; margin: 10px 0 0; }
+  .tooltip { background: #34495e; color: #ffffff; border: 1px solid #2c3e50; }
+  .plotly .modebar { background: #ffffff; }
+  @media (max-width: 768px) { .well, .kpi-card { width: 100%; } .sidebar { width: 100%; border-radius: 12px; } }
 "
 minty_css <- "
-  body { 
-    font-family: 'Segoe UI', 'Roboto', sans-serif; 
-    background: linear-gradient(135deg, #f1f8f7, #e0f0ed); 
-    color: #2f2f2f; 
-  }
-  .sidebar { 
-    background: #f0f6f5; 
-    padding: 20px; 
-    border-right: 2px solid #78c2ad; 
-    border-radius: 0 12px 12px 0; 
-  }
-  .main-panel { 
-    padding: 30px; 
-  }
-  .well { 
-    background: #ffffff; 
-    border: none; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-    border-radius: 12px; 
-    color: #2f2f2f; 
-    transition: transform 0.3s ease; 
-    margin-bottom: 10px;
-  }
-  .well:hover { 
-    transform: scale(1.02); 
-  }
-  .toggle-btn { 
-    background: #78c2ad; 
-    border: none; 
-    border-radius: 8px; 
-    color: #ffffff; 
-    width: 100%; 
-    text-align: left; 
-    padding: 10px; 
-    margin-bottom: 5px; 
-    transition: background 0.3s ease; 
-  }
-  .toggle-btn:hover { 
-    background: #5aa791; 
-  }
-  .btn-primary { 
-    background: #78c2ad; 
-    border: none; 
-    border-radius: 8px; 
-    transition: background 0.3s ease; 
-  }
-  .btn-primary:hover { 
-    background: #5aa791; 
-  }
-  .nav-tabs > li > a { 
-    color: #2f2f2f; 
-    background: #f0f6f5; 
-    border-radius: 8px 8px 0 0; 
-    margin-right: 4px; 
-  }
-  .nav-tabs > li.active > a { 
-    color: #ffffff; 
-    background: #78c2ad; 
-  }
-  .kpi-card { 
-    background: #ffffff; 
-    border-radius: 12px; 
-    padding: 20px; 
-    text-align: center; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-    margin-bottom: 20px; 
-  }
-  .kpi-card h3 { 
-    margin: 0; 
-    font-size: 1.5em; 
-    color: #78c2ad; 
-  }
-  .kpi-card p { 
-    font-size: 2em; 
-    font-weight: bold; 
-    color: #2f2f2f; 
-    margin: 10px 0 0; 
-  }
-  .tooltip { 
-    background: #f0f6f5; 
-    color: #2f2f2f; 
-    border: 1px solid #78c2ad; 
-  }
-  .plotly .modebar { 
-    background: #ffffff; 
-  }
-  @media (max-width: 768px) { 
-    .well, .kpi-card { width: 100%; } 
-    .sidebar { width: 100%; border-radius: 12px; } 
-  }
+  body { font-family: 'Segoe UI', 'Roboto', sans-serif; background: linear-gradient(135deg, #f1f8f7, #e0f0ed); color: #2f2f2f; }
+  .sidebar { background: #f0f6f5; padding: 20px; border-right: 2px solid #78c2ad; border-radius: 0 12px 12px 0; }
+  .main-panel { padding: 30px; }
+  .well { background: #ffffff; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 12px; color: #2f2f2f; transition: transform 0.3s ease; margin-bottom: 10px; }
+  .well:hover { transform: scale(1.02); }
+  .toggle-btn { background: #78c2ad; border: none; border-radius: 8px; color: #ffffff; width: 100%; text-align: left; padding: 10px; margin-bottom: 5px; transition: background 0.3s ease; }
+  .toggle-btn:hover { background: #5aa791; }
+  .btn-primary { background: #78c2ad; border: none; border-radius: 8px; transition: background 0.3s ease; }
+  .btn-primary:hover { background: #5aa791; }
+  .nav-tabs > li > a { color: #2f2f2f; background: #f0f6f5; border-radius: 8px 8px 0 0; margin-right: 4px; }
+  .nav-tabs > li.active > a { color: #ffffff; background: #78c2ad; }
+  .kpi-card { background: #ffffff; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 20px; }
+  .kpi-card h3 { margin: 0; font-size: 1.5em; color: #78c2ad; }
+  .kpi-card p { font-size: 2em; font-weight: bold; color: #2f2f2f; margin: 10px 0 0; }
+  .tooltip { background: #f0f6f5; color: #2f2f2f; border: 1px solid #78c2ad; }
+  .plotly .modebar { background: #ffffff; }
+  @media (max-width: 768px) { .well, .kpi-card { width: 100%; } .sidebar { width: 100%; border-radius: 12px; } }
 "
 for (file in www_files) {
   if (!file.exists(file.path("www", file))) {
@@ -625,18 +349,10 @@ server <- function(input, output, session) {
   })
 
   # Toggle sidebar sections
-  observeEvent(input$toggleNav, {
-    shinyjs::toggle("navPanel")
-  })
-  observeEvent(input$toggleUpload, {
-    shinyjs::toggle("uploadPanel")
-  })
-  observeEvent(input$toggleControls, {
-    shinyjs::toggle("controlsPanel")
-  })
-  observeEvent(input$toggleDownloads, {
-    shinyjs::toggle("downloadsPanel")
-  })
+  observeEvent(input$toggleNav, { shinyjs::toggle("navPanel") })
+  observeEvent(input$toggleUpload, { shinyjs::toggle("uploadPanel") })
+  observeEvent(input$toggleControls, { shinyjs::toggle("controlsPanel") })
+  observeEvent(input$toggleDownloads, { shinyjs::toggle("downloadsPanel") })
 
   # Sync tab selection
   observeEvent(input$tab_select, {
@@ -653,12 +369,12 @@ server <- function(input, output, session) {
       new_data <- read.csv(input$uploadDebtData$datapath)
       if (all(c("Holder", "Amount") %in% colnames(new_data))) {
         debt_data(new_data)
-        showNotification("Debt Holders data uploaded successfully.", type = "message")
+        showNotification("Debt Holders data uploaded.", type = "message")
       } else {
-        showNotification("Invalid CSV format. Requires 'Holder' and 'Amount' columns.", type = "error")
+        showNotification("Invalid CSV: Needs 'Holder', 'Amount'.", type = "error")
       }
     }, error = function(e) {
-      showNotification(paste("Error uploading Debt Holders data:", e$message), type = "error")
+      showNotification(paste("Error uploading Debt Holders:", e$message), type = "error")
     })
   })
   observeEvent(input$uploadDebtTime, {
@@ -667,12 +383,12 @@ server <- function(input, output, session) {
       new_data <- read.csv(input$uploadDebtTime$datapath)
       if (all(c("Year", "Debt", "GDP") %in% colnames(new_data))) {
         debt_time(new_data)
-        showNotification("Debt Over Time data uploaded successfully.", type = "message")
+        showNotification("Debt Over Time data uploaded.", type = "message")
       } else {
-        showNotification("Invalid CSV format. Requires 'Year', 'Debt', and 'GDP' columns.", type = "error")
+        showNotification("Invalid CSV: Needs 'Year', 'Debt', 'GDP'.", type = "error")
       }
     }, error = function(e) {
-      showNotification(paste("Error uploading Debt Over Time data:", e$message), type = "error")
+      showNotification(paste("Error uploading Debt Over Time:", e$message), type = "error")
     })
   })
   observeEvent(input$uploadForeignHolders, {
@@ -681,12 +397,12 @@ server <- function(input, output, session) {
       new_data <- read.csv(input$uploadForeignHolders$datapath)
       if (all(c("Country", "Amount") %in% colnames(new_data))) {
         foreign_holders(new_data)
-        showNotification("Foreign Holders data uploaded successfully.", type = "message")
+        showNotification("Foreign Holders data uploaded.", type = "message")
       } else {
-        showNotification("Invalid CSV format. Requires 'Country' and 'Amount' columns.", type = "error")
+        showNotification("Invalid CSV: Needs 'Country', 'Amount'.", type = "error")
       }
     }, error = function(e) {
-      showNotification(paste("Error uploading Foreign Holders data:", e$message), type = "error")
+      showNotification(paste("Error uploading Foreign Holders:", e$message), type = "error")
     })
   })
   observeEvent(input$uploadFedRemittances, {
@@ -695,16 +411,16 @@ server <- function(input, output, session) {
       new_data <- read.csv(input$uploadFedRemittances$datapath)
       if (all(c("Year", "Remittance") %in% colnames(new_data))) {
         fed_remittances(new_data)
-        showNotification("Fed Remittances data uploaded successfully.", type = "message")
+        showNotification("Fed Remittances data uploaded.", type = "message")
       } else {
-        showNotification("Invalid CSV format. Requires 'Year' and 'Remittance' columns.", type = "error")
+        showNotification("Invalid CSV: Needs 'Year', 'Remittance'.", type = "error")
       }
     }, error = function(e) {
-      showNotification(paste("Error uploading Fed Remittances data:", e$message), type = "error")
+      showNotification(paste("Error uploading Fed Remittances:", e$message), type = "error")
     })
   })
 
-  # Reactive expression for filtered debt time
+  # Filtered debt time
   filtered_debt_time <- reactive({
     tryCatch({
       subset(debt_time(), Year >= input$yearRange[1] & Year <= input$yearRange[2])
@@ -739,7 +455,7 @@ server <- function(input, output, session) {
   # Plot Outputs
   output$debtHoldersPlot <- renderPlotly({
     tryCatch({
-      plot_ly(debt_data(), labels = ~Holder, values = ~Amount, type = "pie",
+      plot_ly(debt_data(), labels = ~Holder, values = soldering~Amount, type = "pie",
               textinfo = "label+percent", insidetextorientation = "radial",
               hoverinfo = "text", text = ~paste(Holder, ": $", Amount, "B"),
               marker = list(colors = c("#0078d4", "#005ba1", "#64b5f6", "#d4e6ff"))) %>%
@@ -765,7 +481,7 @@ server <- function(input, output, session) {
     })
   })
   output$debtHoldersSummary <- renderText({
-    "The Federal Reserve holds ~20% of U.S. national debt; the largest share is held by domestic and foreign investors."
+    "Federal Reserve holds ~20%; domestic/foreign investors dominate."
   })
 
   output$debtTimePlot <- renderPlotly({
@@ -797,7 +513,7 @@ server <- function(input, output, session) {
     })
   })
   output$debtTimeSummary <- renderText({
-    "U.S. national debt has grown steeply since 2000, crossing $35 trillion by 2025."
+    "Debt crossed $35T by 2025, rising sharply since 2000."
   })
 
   output$debtGDPPlot <- renderPlotly({
@@ -816,7 +532,7 @@ server <- function(input, output, session) {
     })
   })
   output$debtGDPSummary <- renderText({
-    "The debt-to-GDP ratio reflects the U.S. debt burden relative to economic output, rising steadily since 2000."
+    "Debt-to-GDP ratio rises steadily, reflecting growing debt burden."
   })
 
   output$foreignHoldersPlot <- renderPlotly({
@@ -846,7 +562,7 @@ server <- function(input, output, session) {
     })
   })
   output$foreignHoldersSummary <- renderText({
-    "China and Japan are the largest foreign holders of U.S. debt, followed by the UK, Brazil, and others."
+    "China, Japan lead foreign holders, followed by UK, Brazil."
   })
 
   output$fedRemittancesPlot <- renderPlotly({
@@ -878,7 +594,7 @@ server <- function(input, output, session) {
     })
   })
   output$fedRemittancesSummary <- renderText({
-    "The Federal Reserve returns billions annually to the Treasury, peaking at ~$150B before declining post-2020."
+    "Fed remittances peaked at ~$150B, declining post-2020."
   })
 
   output$debtCompositionPlot <- renderPlotly({
@@ -897,7 +613,7 @@ server <- function(input, output, session) {
     })
   })
   output$debtCompositionSummary <- renderText({
-    "Debt composition shows the evolving shares of Federal Reserve, U.S. Public, Foreign Holders, and Intragovernmental holdings."
+    "Shows evolving shares of Fed, public, foreign, intragovernmental debt."
   })
 
   # Scenario Analysis
@@ -1049,32 +765,18 @@ shinyApp(ui, server)
 
 
 
-The code includes:
+Implements reactive datasets, Plotly visualizations, Monte Carlo simulations, and dynamic CSS themes with error handling.
 
-Package Checks: Ensures required packages and versions are installed.
-Dynamic CSS: Generates darkly.css, flatly.css, and minty.css for theme switching.
-Reactive Datasets: Manages debt data, time series, foreign holders, and Fed remittances.
-UI Components: Builds KPI cards, Plotly visualizations, and sidebar controls.
-Server Logic: Handles data uploads, scenario analysis, and downloads with error handling.
+Why This Matters 🔍
 
-
-Why This Matters
-The U.S. national debt is more than a number—it’s a lens into economic stability, geopolitical influence, and intergenerational equity. USDebtInsights empowers stakeholders to grapple with its implications:
-
-For Economists: The app’s debt-to-GDP visualizations and Monte Carlo simulations provide rigorous tools to assess fiscal sustainability. By modeling scenarios with varying interest rates, GDP growth, and inflation, researchers can quantify risks and inform academic studies or policy papers.
-
-For Political Strategists: Debt shapes voter priorities and campaign narratives. The app’s intuitive charts and downloadable data enable strategists to craft compelling stories about fiscal responsibility, foreign debt exposure, or Federal Reserve impacts, grounded in credible data.
-
-For Professors and Students: In classrooms, USDebtInsights bridges theory and practice. History professors can contextualize debt trends against past economic crises, while economics students can explore real-time data and run simulations to deepen their understanding of fiscal dynamics.
-
-For Policymakers and the Public: With foreign holders like China and Japan owning significant debt shares, and intragovernmental holdings complicating budget debates, the app clarifies complex dynamics. Its accessible design democratizes data, fostering informed public discourse.
+Economists: Models debt risks via Monte Carlo simulations.
+Strategists: Visualizes fiscal data for policy narratives.
+Professors: Contextualizes debt trends for teaching.
+Policymakers: Clarifies foreign and intragovernmental debt dynamics.
 
 
-By making debt data interactive, customizable, and visually engaging, USDebtInsights transforms raw numbers into actionable insights, fostering dialogue across academia, policy, and society.
+Conclusion 🎯
+USDebtInsights delivers interactive U.S. debt analysis with R and Shiny. Explore it at https://mmcdonald411.shinyapps.io/USDebtApp/, clone to customize, or contribute on GitHub.
+License: MITContribute: See CONTRIBUTING.md.Contact: Your Name
 
-Conclusion
-USDebtInsights is a powerful tool for dissecting the U.S. national debt, blending cutting-edge R technology with a user-friendly, PowerBI-inspired interface. Whether you’re analyzing debt composition, forecasting fiscal scenarios, or preparing for a lecture or campaign, this app delivers the data and visuals you need. Explore it live at https://mmcdonald411.shinyapps.io/USDebtApp/, clone the repository to customize it, or contribute to its development on GitHub. Join us in illuminating one of the most pressing economic challenges of our time.
-License: MIT
-Contributing: Pull requests and issues are welcome! Please follow the contributing guidelines.
-Contact: [Your Name] (your.email@example.com) or open an issue on GitHub.
 
